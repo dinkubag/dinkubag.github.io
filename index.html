@@ -49,5 +49,72 @@
 		
 		
 		<h3 style="background-color:powderblue;">Publications</h3>
+
+		<h4> Conferences </h4>
+		<ol id="conf-publication-list"></ol>
+
+		    <script>
+		        const confpublications = [
+		            {
+		                title: "k-times bin packing and its application to fair electricity distribution",
+		                authors: "Dinesh Kumar Baghel, Alex Ravsky, Erel Segal-Halevi",
+		                conference: "International Symposium on Algorithmic Game Theory (SAGT)",
+		                year: "2024",
+						rank: "B",
+		                url: "https://link.springer.com/chapter/10.1007/978-3-031-71033-9_27"
+		            } 
+		        ];
+
+		        const confpublicationListElement = document.getElementById('conf-publication-list');
+
+		        confpublications.forEach(pub => {
+		            const li = document.createElement('li');
+		            li.innerHTML = `
+		                <strong>${pub.title}</strong><br>
+		                Authors: ${pub.authors}<br>
+		                Conference: ${pub.conference}, ${pub.year}<br>
+						Core ranking: ${pub.rank}<br>
+		                <a href="${pub.url}">Link to publication</a>
+		            `;
+		            confpublicationListElement.appendChild(li);
+		        });
+		    </script>
+		
+		<h4> Preprint </h4>
+		<ol id="publication-list"></ol>
+
+		    <script>
+		        const publications = [
+		            {
+		                title: "Fair Division Algorithms for Electricity Distribution",
+		                authors: "Dinesh Kumar Baghel, Vadim E. Levit, Erel Segal-Halevi",
+		                repository: "arXiv",
+		                year: "2022",
+		                url: "https://arxiv.org/pdf/2205.14531"
+		            },
+		            {
+		                title: "k-times bin packing and its application to fair electricity distribution",
+		                authors: "Dinesh Kumar Baghel, Alex Ravsky, Erel Segal-Halevi",
+		                repository: "arXiv",
+		                year: "2025",
+		                url: "https://arxiv.org/pdf/2311.16742",
+						remark: " (extended verions of our SAGT-2024 accepted paper.)"
+		            }
+		        ];
+
+		        const publicationListElement = document.getElementById('publication-list');
+
+		        publications.forEach(pub => {
+		            const li = document.createElement('li');
+		            li.innerHTML = `
+		                <strong>${pub.title}</strong><br>
+		                Authors: ${pub.authors}<br>
+		                Repository: ${pub.repository}, ${pub.year}<br>
+		                <a href="${pub.url}">Link to publication</a>${pub.remark}
+		            `;
+		            publicationListElement.appendChild(li);
+		        });
+		    </script>	
+		
 	</body>
 </html>
